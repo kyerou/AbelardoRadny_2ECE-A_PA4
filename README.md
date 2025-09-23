@@ -160,6 +160,7 @@ plt.xticks(rotation=0)
 plt.show()
 ```
 For the last lines of code, it was to set INSTRU and MINDY as a CSV file.
+
 I used the code: '.to_cvs'. This code sets a certain variable into a CSV file
 
 For the whole code:
