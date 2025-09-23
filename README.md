@@ -13,7 +13,7 @@ board = pd.read_csv('board2.csv')
 ```
 This accesses the CSV file and assigns it to a variable, which was 'board'
 
-<b>First Problem<b>
+#FIRST PROBLEM
 
 For the sample problem, we were asked to code to group and index that fit into a certain condition:
 'Vis = [“Name”, “Gender”, “Track”, “Math<70”]; hometown is constant as Visayas'
@@ -77,7 +77,7 @@ Mindy = board.loc[(board['Gender'] == 'Female') #locates the students that have 
 This problem was set into the variable 'Mindy'
 
 
-<b> SECOND PROBLEM <b>
+#SECOND PROBLEM
 
 It was asked to create a visualization of how different features contribute to the average grade. The features were that if the chosen track, the hometown, or the gender contributed to a certain amount of grade.
 
