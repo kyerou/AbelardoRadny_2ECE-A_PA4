@@ -55,6 +55,27 @@ Instru = board.loc[(board['Track'] == 'Instrumentation')& #tracks the students w
 ```
 Setting the code to the variable 'Intru'
 
+For the next problem, it was asked to track students who have their hometown as Mindanao and their gender as female, while having a grade average that is >= 55
+
+For the specific problem, it is asked to have an average, which wasn't shown in the CSV file. Meaning we have to make an average category to calculate the average grade of each student.
+
+``` python
+board['Average'] #' board['Average']' creates a category of the dataframe that is named 'Average'
+board[['Math', 'GEAS', 'Electronics', 'Communication']].mean(axis=1) #this computes the mean of Math, GEAS, Electronics, and Communications combined, while axis =1 puts the new category in a column
+```
+For the complete line of code
+```python
+board['Average'] = board[['Math', 'GEAS', 'Electronics', 'Communication']].mean(axis=1)
+```
+Now to solve the problem:
+```python
+Mindy = board.loc[(board['Gender'] == 'Female') #locates the students that have Female as their gender
+ & (board['Hometown'] == 'Mindanao') #locates the students that have Mindanao as their Hometown
+ & (board['Average'] >= 55) #locates the studnets that have an Average >=55
+, ['Name', 'Track', 'Electronics', 'Average']] #the line of categories that will be output when you run the code.
+```
+This problem was set into variable 'Mindy'
+
 ``` python
 board.loc[(board['Track'] == 'Instrumentation') &
 board.loc[(board['Math'] <70) #locating the variables that apply to the condition like whether finding the same track or having higher grades
