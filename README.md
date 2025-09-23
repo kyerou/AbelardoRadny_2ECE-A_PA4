@@ -3,6 +3,16 @@
 
 <b>Data Wrangling and Data Visualization <b>
 
+For the problem assignment, we were given a CSV file to use to conduct a series of problems and conditions to find certain results that are needed.
+
+The CSV file contained a data frame of students that had a category for gender, track, and hometown, with their grades in MATH, ELECTRONICS, GEAS, and COMMUNICATION.
+
+To access the CSV file I used:
+``` python
+board = pd.read_csv('board2.csv')
+```
+
+
 ``` python
 board.loc[(board['Track'] == 'Instrumentation') &
 board.loc[(board['Math'] <70) #locating the variables that apply to the condition like whether finding the same track or having higher grades
