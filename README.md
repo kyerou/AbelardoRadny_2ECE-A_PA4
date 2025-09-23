@@ -159,3 +159,11 @@ plt.xlabel('Hometown')
 plt.xticks(rotation=0)
 plt.show()
 ```
+For the last lines of code, it was to set INSTRU and MINDY as a CSV file.
+I used the code: '.to_cvs'. This code sets a certain variable into a CSV file
+
+For the whole code:
+```python
+Mindy.to_csv("Mindy.csv") #sets Mindy into a csv file named Mindy.csv
+Instru.to_csv("Instru.csv") #sets Instru into a csv file named Instru.csv
+```
