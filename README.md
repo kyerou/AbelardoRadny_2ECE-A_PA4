@@ -7,9 +7,40 @@ For the problem assignment, we were given a CSV file to use to conduct a series 
 
 The CSV file contained a data frame of students that had a category for gender, track, and hometown, with their grades in MATH, ELECTRONICS, GEAS, and COMMUNICATION.
 
-To access the CSV file I used:
+To access the CSV file, I used the code:
 ``` python
 board = pd.read_csv('board2.csv')
+```
+This accesses the CSV file and assigns it to a variable, which was 'board'
+
+<b>First Problem<b>
+
+For the sample problem, we were asked to code to group and index that fit into a certain condition:
+'Vis = [“Name”, “Gender”, “Track”, “Math<70”]; hometown is constant as Visayas'
+
+To break down the list to fit the conditions, first is to narrow it by the hometown 'Visayas'
+
+I used: 
+``` python
+board.loc(board['Hometown'] == 'Visayas')
+```
+This code looks through the category of Hometown to look for the students who have Visayas as their hometown.
+
+To narrow down the students who have Math <70, I used:
+``` python
+board.loc[(board['Math'] <70)
+```
+This locates the students who have grades of Math that are less than 70.
+
+Finally, for the code that outputs the Name, Gender, Track, and Math score. I used:
+```python
+['Name', 'Gender', 'Track', 'Math']]
+```
+This outputs the categories that are inside the bracket
+
+For the full code: 
+```python
+Vis = board.loc[(board['Math'] <70) & (board['Hometown'] == 'Visayas'), ['Name', 'Gender', 'Track', 'Math']]
 ```
 
 
