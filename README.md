@@ -74,18 +74,88 @@ Mindy = board.loc[(board['Gender'] == 'Female') #locates the students that have 
  & (board['Average'] >= 55) #locates the studnets that have an Average >=55
 , ['Name', 'Track', 'Electronics', 'Average']] #the line of categories that will be output when you run the code.
 ```
-This problem was set into variable 'Mindy'
+This problem was set into the variable 'Mindy'
 
+
+<b> SECOND PROBLEM <b>
+
+It was asked to create a visualization of how different features contribute to the average grade. The features were that if the chosen track, the hometown, or the gender contributed to a certain amount of grade.
+
+To apply visualization, we must import matplotlib using:
+```python
+import matplotlib.pyplot as plt
+```
+
+Now, to track a certain feature for the graph, I used:
+```python
+track_avg = board.groupby('Track')['Average'].mean()
+gender_avg = board.groupby('Gender')['Average'].mean()
+hometown_avg = board.groupby('Hometown')['Average'].mean()
+```
+The code, groupby, groups up a certain category/feature that applies to the graph. 
+For example, you place Track in groupby, only the track will be tracked in the graph for the grade average.
+
+To set the size of the graph:
 ``` python
-board.loc[(board['Track'] == 'Instrumentation') &
-board.loc[(board['Math'] <70) #locating the variables that apply to the condition like whether finding the same track or having higher grades
-['Name', 'Gender', 'Track', 'Math']] #this code outputs the specific column that was categorized when you input it.
-board[['Math', 'GEAS', 'Electronics','Communication']].mean(axis=1) #gets the mean of all what is inside the bracket and places it in axis 1 which mean its a column
-track_avg = board.groupby('Track')['Average'].mean() #groupby groups the certain data by what variable you put on it.
-plt.figure(figsize=(8,5)) #inputs the size of the graph
-track_avg.plot(kind="bar") #sets up what type of graph we will use
-plt.title('Average Sources by Track') #places the titles of the graph
-plt.ylabel('Average score') #places the label on the y axis
-plt.xlabel('Track') #place the label on the x axis
-plt.xticks(rotation=0) #rotates the label horizontally
+plt.figure(figsize=(8,5))
+```
+
+To set the graph into a bar graph:
+```python
+track_avg.plot(kind="bar")
+gender_avg.plot(kind="bar")
+hometown_avg.plot(kind="bar")
+```
+
+To set the title of the graph and the labels for the x and y axis:
+```python
+plt.title('Average Sources by Gender') #This sets the title of the Graph
+plt.ylabel('Average score') #This sets the label of the y axis
+plt.xlabel('Gender') #This sets the label of the x axis
+```
+
+To set the x-axis horizontally:
+```python
+plt.xticks(rotation=0)
+```
+This code uses the rotation in degrees, which is why the x label will be at 0 degrees, therefore horizontal.
+
+
+To show the codes combined:
+
+For Track:
+```python
+track_avg = board.groupby('Track')['Average'].mean()
+
+plt.figure(figsize=(8,5))
+track_avg.plot(kind="bar")
+plt.title('Average Sources by Track')
+plt.ylabel('Average score')
+plt.xlabel('Gender')
+plt.xticks(rotation=0)
+plt.show()
+```
+For Gender:
+``` python
+gender_avg = board.groupby('Gender')['Average'].mean()
+
+plt.figure(figsize=(8,5))
+gender_avg.plot(kind="bar")
+plt.title('Average Sources by Gender')
+plt.ylabel('Average score')
+plt.xlabel('Gender')
+plt.xticks(rotation=0)
+plt.show()
+```
+For Hometown:
+``` python
+hometown_avg = board.groupby('Hometown')['Average'].mean()
+
+plt.figure(figsize=(8,5))
+hometown_avg.plot(kind="bar")
+plt.title('Average Sources by Hometown')
+plt.ylabel('Average score')
+plt.xlabel('Hometown')
+plt.xticks(rotation=0)
+plt.show()
 ```
