@@ -22,7 +22,7 @@ To break down the list to fit the conditions, first is to narrow it by the homet
 
 I used: 
 ``` python
-board.loc(board['Hometown'] == 'Visayas')
+board.loc(board['Hometown'] == 'Visayas') #the loc code locates the within the entire data from for a set category for a set condition.
 ```
 This code looks through the category of Hometown to look for the students who have Visayas as their hometown.
 
@@ -43,6 +43,17 @@ For the full code:
 Vis = board.loc[(board['Math'] <70) & (board['Hometown'] == 'Visayas'), ['Name', 'Gender', 'Track', 'Math']]
 ```
 
+
+<b> For the two problems, it's the same line of code just with different Conditions <b>
+
+For the Instru Problem, it was asked to track the students who have the track of Instrumentation and the hometown of Luzon, that has a condition of their electronics grade greater than 70.
+```python
+Instru = board.loc[(board['Track'] == 'Instrumentation')& #tracks the students with the Intrumentation track
+ (board['Hometown'] == 'Luzon') & #tracks the students that have the hometown of Luzon
+(board['Electronics']>70), #tracks the students who have an electronics grade greater than 70
+['Name', 'GEAS', 'Electronics'] #These categories will be the ones that will be output when u run the code.
+```
+Setting the code to the variable 'Intru'
 
 ``` python
 board.loc[(board['Track'] == 'Instrumentation') &
